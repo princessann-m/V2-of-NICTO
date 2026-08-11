@@ -1,0 +1,9 @@
+{
+  "mode": "A",
+  "accuracy": 0.0,
+  "hallucination_rate": 0.0,
+  "latency_ms": 21834.96347000073,
+  "compute_cost": 21.83496347000073,
+  "samples": 1,
+  "metadata": {}
+}

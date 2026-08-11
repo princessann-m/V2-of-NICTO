@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Virtualenv
+.venv/
+
+# Model outputs
+models/
+nicto_toy_model/
+nicto_model_out/
+
+# Logs
+logs/

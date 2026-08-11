@@ -1,0 +1,4 @@
+pytest
+requests
+numpy
+python-dotenv
