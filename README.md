@@ -1,4 +1,4 @@
-# NICTO V2 — Mixture of Minds Architecture
+# NICTO V2 — Mixture of Models Architecture
 
 **Version**: 2.0  
 **Status**: Research Prototype — Code Available, Models Not Open Source  
