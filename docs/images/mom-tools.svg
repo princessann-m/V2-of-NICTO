@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="monospace" font-size="12">
+  <defs>
+    <marker id="ah3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  <rect width="900" height="520" fill="#f8f9fa"/>
+
+  <text x="450" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a2e">MoM Built-In Tools</text>
+
+  <rect x="40" y="45" width="190" height="55" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="135" y="65" text-anchor="middle" font-weight="bold" fill="#1e40af">CALCULATOR</text>
+  <text x="135" y="80" text-anchor="middle" fill="#1e40af" font-size="10">Safe AST-based arithmetic</text>
+  <text x="135" y="95" text-anchor="middle" fill="#1e40af" font-size="10">algebra · calculus · stats</text>
+
+  <rect x="250" y="45" width="190" height="55" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="345" y="65" text-anchor="middle" font-weight="bold" fill="#1e40af">SIMULATION</text>
+  <text x="345" y="80" text-anchor="middle" fill="#1e40af" font-size="10">Physics · ODE solvers</text>
+  <text x="345" y="95" text-anchor="middle" fill="#1e40af" font-size="10">Euler · RK4 · scipy IVP</text>
+
+  <rect x="460" y="45" width="190" height="55" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="555" y="65" text-anchor="middle" font-weight="bold" fill="#1e40af">VIRTUAL LAB</text>
+  <text x="555" y="80" text-anchor="middle" fill="#1e40af" font-size="10">Computational experiments</text>
+  <text x="555" y="95" text-anchor="middle" fill="#1e40af" font-size="10">hypothesis → conclusion</text>
+
+  <rect x="670" y="45" width="190" height="55" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="765" y="65" text-anchor="middle" font-weight="bold" fill="#1e40af">CODING STUDIO</text>
+  <text x="765" y="80" text-anchor="middle" fill="#1e40af" font-size="10">Sandboxed code execution</text>
+  <text x="765" y="95" text-anchor="middle" fill="#1e40af" font-size="10">pytest · temp dirs</text>
+
+  <line x1="135" y1="100" x2="135" y2="120" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="345" y1="100" x2="345" y2="120" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="555" y1="100" x2="555" y2="120" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="765" y1="100" x2="765" y2="120" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="320" y="120" width="260" height="40" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="450" y="145" text-anchor="middle" font-weight="bold" fill="#92400e">TOOL PROTOCOL</text>
+  <text x="450" y="158" text-anchor="middle" fill="#92400e" font-size="10">name · schema · permissions · timeout · validation</text>
+
+  <line x1="450" y1="160" x2="450" y2="180" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="320" y="180" width="260" height="40" rx="6" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+  <text x="450" y="205" text-anchor="middle" font-weight="bold" fill="#9d174d">STRUCTURED RESULTS</text>
+  <text x="450" y="218" text-anchor="middle" fill="#9d174d" font-size="10">actual numbers · measurements · test outputs</text>
+
+  <line x1="450" y1="220" x2="450" y2="240" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="320" y="240" width="260" height="40" rx="6" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="450" y="265" text-anchor="middle" font-weight="bold" fill="#3730a3">VERIFIER / JUDGES</text>
+  <text x="450" y="278" text-anchor="middle" fill="#3730a3" font-size="10">Tool outputs are validated and scored</text>
+
+  <line x1="450" y1="280" x2="450" y2="300" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="350" y="300" width="200" height="35" rx="6" fill="#d1fae5" stroke="#10b981" stroke-width="2"/>
+  <text x="450" y="322" text-anchor="middle" font-weight="bold" fill="#065f46">FINAL ANSWER</text>
+
+  <text x="450" y="360" text-anchor="middle" font-size="10" fill="#666">All tools produce REAL computational results, never simulated text</text>
+  <text x="450" y="378" text-anchor="middle" font-size="10" fill="#666">Results are labeled: SIMULATION RESULT or VIRTUAL EXPERIMENT RESULT</text>
+  <text x="450" y="396" text-anchor="middle" font-size="10" fill="#666">Browser tool: Playwright-style interface (requires external browser runtime)</text>
+  <text x="450" y="414" text-anchor="middle" font-size="10" fill="#666">Audio STT/TTS: UNTRAINED architectures ready for training</text>
+</svg>

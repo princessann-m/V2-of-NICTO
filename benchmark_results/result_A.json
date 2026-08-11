@@ -2,8 +2,8 @@
   "mode": "A",
   "accuracy": 1.0,
   "hallucination_rate": 0.0,
-  "latency_ms": 17917.22228300023,
-  "compute_cost": 17.91722228300023,
+  "latency_ms": 18923.277159999998,
+  "compute_cost": 18.923277159999998,
   "samples": 1,
   "metadata": {}
 }

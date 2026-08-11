@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="monospace" font-size="12">
+  <defs>
+    <marker id="ah7" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  <rect width="900" height="420" fill="#f8f9fa"/>
+
+  <text x="450" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a2e">MoM Creative Generation Architecture</text>
+
+  <rect x="340" y="45" width="220" height="40" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="450" y="65" text-anchor="middle" font-weight="bold" fill="#1e40af">MME VISUAL SPECIFICATION</text>
+  <text x="450" y="80" text-anchor="middle" fill="#1e40af" font-size="10">subject · composition · lighting · style</text>
+
+  <line x1="450" y1="85" x2="450" y2="105" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="340" y="105" width="220" height="45" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="450" y="125" text-anchor="middle" font-weight="bold" fill="#92400e">IMAGE GENERATOR / GAN</text>
+  <text x="450" y="143" text-anchor="middle" fill="#92400e" font-size="10">DCGAN generator · discriminator</text>
+  <text x="450" y="158" text-anchor="middle" fill="#92400e" font-size="10">Status: architecture implemented, UNTRAINED</text>
+
+  <line x1="450" y1="150" x2="450" y2="170" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="340" y="170" width="220" height="45" rx="6" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+  <text x="450" y="190" text-anchor="middle" font-weight="bold" fill="#9d174d">DIRECTOR MODEL</text>
+  <text x="450" y="208" text-anchor="middle" fill="#9d174d" font-size="10">Composition · quality · hierarchy</text>
+  <text x="450" y="223" text-anchor="middle" fill="#9d174d" font-size="10">Status: transformer architecture, UNTRAINED</text>
+
+  <line x1="450" y1="215" x2="450" y2="235" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="180" y="235" width="160" height="40" rx="6" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="260" y="255" text-anchor="middle" font-weight="bold" fill="#3730a3">LIGHTING EXPERT</text>
+
+  <rect x="370" y="235" width="160" height="40" rx="6" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="450" y="255" text-anchor="middle" font-weight="bold" fill="#3730a3">COMPOSITION EXPERT</text>
+
+  <rect x="560" y="235" width="160" height="40" rx="6" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="640" y="255" text-anchor="middle" font-weight="bold" fill="#3730a3">TEXTURE EXPERT</text>
+
+  <line x1="260" y1="275" x2="260" y2="295" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="450" y1="275" x2="450" y2="295" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="640" y1="275" x2="640" y2="295" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="320" y="295" width="260" height="40" rx="6" fill="#d1fae5" stroke="#10b981" stroke-width="2"/>
+  <text x="450" y="315" text-anchor="middle" font-weight="bold" fill="#065f46">QUALITY CHECK & ITERATION</text>
+  <text x="450" y="330" text-anchor="middle" fill="#065f46" font-size="10">Director review → creative revision → regenerate</text>
+
+  <line x1="450" y1="335" x2="450" y2="355" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="340" y="355" width="220" height="35" rx="6" fill="#ccfbf1" stroke="#14b8a6" stroke-width="2"/>
+  <text x="450" y="377" text-anchor="middle" font-weight="bold" fill="#134e4a">FINAL IMAGE / MEDIA</text>
+
+  <text x="450" y="410" text-anchor="middle" font-size="10" fill="#666">All creative components: architectures implemented, awaiting training data</text>
+</svg>

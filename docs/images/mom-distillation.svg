@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="monospace" font-size="12">
+  <defs>
+    <marker id="ah6" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  <rect width="900" height="420" fill="#f8f9fa"/>
+
+  <text x="450" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a2e">MoM Distillation — Teacher → Student Pipeline</text>
+
+  <rect x="80" y="45" width="180" height="55" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="170" y="65" text-anchor="middle" font-weight="bold" fill="#92400e">TEACHER MODELS</text>
+  <text x="170" y="80" text-anchor="middle" fill="#92400e" font-size="10">Large general/specialist</text>
+  <text x="170" y="93" text-anchor="middle" fill="#92400e" font-size="10">models with strong reasoning</text>
+
+  <rect x="360" y="45" width="180" height="55" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="450" y="65" text-anchor="middle" font-weight="bold" fill="#92400e">REASONING TEACHER</text>
+  <text x="450" y="80" text-anchor="middle" fill="#92400e" font-size="10">Chain-of-thought</text>
+  <text x="450" y="93" text-anchor="middle" fill="#92400e" font-size="10">demonstrations</text>
+
+  <rect x="640" y="45" width="180" height="55" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="730" y="65" text-anchor="middle" font-weight="bold" fill="#92400e">CODING TEACHER</text>
+  <text x="730" y="80" text-anchor="middle" fill="#92400e" font-size="10">Code generation</text>
+  <text x="730" y="93" text-anchor="middle" fill="#92400e" font-size="10">with tests</text>
+
+  <line x1="170" y1="100" x2="170" y2="120" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="450" y1="100" x2="450" y2="120" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="730" y1="100" x2="730" y2="120" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <line x1="170" y1="120" x2="730" y2="120" stroke="#333" stroke-width="2"/>
+  <line x1="730" y1="120" x2="730" y2="140" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="340" y="140" width="220" height="45" rx="6" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+  <text x="450" y="160" text-anchor="middle" font-weight="bold" fill="#991b1b">VERIFICATION LAYER</text>
+  <text x="450" y="178" text-anchor="middle" fill="#991b1b" font-size="10">Tool checks · fact verification · filtering</text>
+
+  <line x1="450" y1="185" x2="450" y2="205" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="340" y="205" width="220" height="40" rx="6" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="450" y="225" text-anchor="middle" font-weight="bold" fill="#3730a3">TRAINING DATA</text>
+  <text x="450" y="240" text-anchor="middle" fill="#3730a3" font-size="10">Verified (input → output) pairs</text>
+
+  <line x1="450" y1="245" x2="450" y2="265" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="340" y="265" width="220" height="40" rx="6" fill="#d1fae5" stroke="#10b981" stroke-width="2"/>
+  <text x="450" y="285" text-anchor="middle" font-weight="bold" fill="#065f46">MAMBA STUDENTS</text>
+  <text x="450" y="300" text-anchor="middle" fill="#065f46" font-size="10">Specialized · efficient · deployable</text>
+
+  <line x1="450" y1="305" x2="450" y2="325" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="340" y="325" width="220" height="35" rx="6" fill="#ccfbf1" stroke="#14b8a6" stroke-width="2"/>
+  <text x="450" y="345" text-anchor="middle" font-weight="bold" fill="#134e4a">SPECIALIZED MME EXPERTS</text>
+
+  <text x="450" y="390" text-anchor="middle" font-size="10" fill="#666">Teachers are NOT deployed at inference — students become the experts</text>
+  <text x="450" y="408" text-anchor="middle" font-size="10" fill="#666">Verification ensures only high-quality teacher outputs enter training</text>
+</svg>

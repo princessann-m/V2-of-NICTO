@@ -109,3 +109,108 @@ PRs welcome. See `docs/ARCHITECTURE.md` for design details.
 ## License
 
 MIT
+│       ├── mom-creative.svg
+│       └── mom-video.svg
+│
+├── tests/                    # Pytest suite
+│   ├── test_pipeline.py
+│   ├── test_mamba.py
+│   ├── test_gan.py
+│   ├── test_simulation.py
+│   ├── test_virtual_lab.py
+│   ├── test_router.py
+│   ├── test_training.py
+│   └── ...
+│
+├── scripts/                  # Training/evaluation scripts
+│   ├── train_toy_nicto.py
+│   ├── train_nicto_hf.py
+│   ├── evaluate_nicto.py
+│   └── prepare_data.py
+│
+├── docker/
+│   ├── Dockerfile.cpu
+│   └── Dockerfile.gpu
+│
+├── requirements.txt
+├── setup.py
+├── run_demo.py
+└── README.md
+```
+
+---
+
+## Contributing
+
+MoM is a research architecture. Contributions are welcome in:
+
+- Model training and evaluation
+- Router optimization
+- Tool integration
+- Benchmarking
+- Documentation
+
+Please see `docs/ARCHITECTURE.md` for design details and `docs/TRAINING.md` for training guidelines.
+
+---
+
+## License
+
+MIT — see `LICENSE` for details.
+
+---
+
+## Citation
+
+If you use MoM in academic research, please cite:
+
+```bibtex
+@misc{mom2025,
+  title={Mixture of Models (MoM): A Sparse Cooperative AI Architecture},
+  author={MoM Contributors},
+  year={2025},
+  url={https://github.com/princessann-m/V2-of-NICTO}
+}
+```
+
+---
+
+## Contact
+
+For questions, issues, or collaboration inquiries, please open an issue on GitHub or reach out through the repository.
+
+---
+
+## The Vision
+
+The long-term goal of MoM is to explore whether **intelligence can emerge from cooperation rather than scale**.
+
+Instead of building one model that must do everything, MoM investigates whether:
+
+- **Specialists** can achieve deeper capability in narrow domains
+- **Routers** can allocate computation intelligently
+- **Tools** can extend reasoning beyond text
+- **Simulations** can test hypotheses computationally
+- **Verification** can challenge and improve outputs
+- **Competition** between independent systems can increase robustness
+- **Arbitration** can select the strongest result
+
+The architecture is designed to be:
+
+- **Modular** — components can be replaced or upgraded independently
+- **Sparse** — computation is allocated only where needed
+- **Adaptive** — the system adjusts to task difficulty and available resources
+- **Verifiable** — outputs are checked, not trusted
+- **Scalable** — new experts can be added without redesigning the system
+
+This is an experimental direction in AI architecture. The experiments will determine whether the approach holds.
+
+The question is not whether one model can learn everything.
+
+The question is whether **specialized components, working together under intelligent routing and verification, can form a better AI system than any single model alone**.
+
+MoM is built to find out.
+
+---
+
+*Built with PyTorch, Mamba, and the belief that the future of AI may be cooperative, not monolithic.*

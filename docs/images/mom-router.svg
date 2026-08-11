@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="monospace" font-size="12">
+  <defs>
+    <marker id="ah2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  <rect width="900" height="480" fill="#f8f9fa"/>
+
+  <text x="450" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a2e">MoM Intelligent Sparse Router</text>
+
+  <rect x="350" y="45" width="200" height="40" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="450" y="65" text-anchor="middle" font-weight="bold" fill="#1e40af">USER REQUEST</text>
+  <text x="450" y="80" text-anchor="middle" fill="#1e40af" font-size="10">"Calculate 12 × (3 + 4)"</text>
+
+  <line x1="450" y1="85" x2="450" y2="105" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="320" y="105" width="260" height="45" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="450" y="125" text-anchor="middle" font-weight="bold" fill="#92400e">MASTER ROUTER</text>
+  <text x="450" y="143" text-anchor="middle" fill="#92400e" font-size="10">Task Analysis · Domain Detection · Complexity</text>
+
+  <line x1="450" y1="150" x2="450" y2="170" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="320" y="170" width="260" height="45" rx="6" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+  <text x="450" y="190" text-anchor="middle" font-weight="bold" fill="#9d174d">EXPERT ROUTER</text>
+  <text x="450" y="208" text-anchor="middle" fill="#9d174d" font-size="10">Hierarchical Filter · Capability Scoring · Top-K</text>
+
+  <line x1="450" y1="215" x2="450" y2="235" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="350" y="235" width="200" height="40" rx="6" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="450" y="255" text-anchor="middle" font-weight="bold" fill="#3730a3">EXPERT SCORES</text>
+  <text x="450" y="270" text-anchor="middle" fill="#3730a3" font-size="10">relevance · latency · quality · compute_cost</text>
+
+  <line x1="450" y1="275" x2="450" y2="295" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="350" y="295" width="200" height="40" rx="6" fill="#d1fae5" stroke="#10b981" stroke-width="2"/>
+  <text x="450" y="315" text-anchor="middle" font-weight="bold" fill="#065f46">TOP-K SELECTION</text>
+  <text x="450" y="330" text-anchor="middle" fill="#065f46" font-size="10">K = 2 for easy math task</text>
+
+  <line x1="450" y1="335" x2="450" y2="355" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="340" y="355" width="220" height="55" rx="6" fill="#ccfbf1" stroke="#14b8a6" stroke-width="2"/>
+  <text x="450" y="375" text-anchor="middle" font-weight="bold" fill="#134e4a">ACTIVE EXPERTS</text>
+  <text x="450" y="393" text-anchor="middle" fill="#134e4a" font-size="10">math_expert · reasoning_expert</text>
+  <text x="450" y="408" text-anchor="middle" fill="#134e4a" font-size="10">(294 experts remain inactive)</text>
+
+  <line x1="450" y1="410" x2="450" y2="430" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="350" y="430" width="200" height="35" rx="6" fill="#fef9c3" stroke="#eab308" stroke-width="2"/>
+  <text x="450" y="452" text-anchor="middle" font-weight="bold" fill="#713f12">SPARSE EXECUTION</text>
+
+  <text x="450" y="475" text-anchor="middle" font-size="10" fill="#666">Only activated experts consume compute · others remain cached</text>
+</svg>

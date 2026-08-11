@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" font-family="monospace" font-size="12">
+  <defs>
+    <marker id="ah5" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  <rect width="900" height="540" fill="#f8f9fa"/>
+
+  <text x="450" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a2e">MoM Training Pipeline</text>
+
+  <rect x="340" y="45" width="220" height="35" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="450" y="65" text-anchor="middle" font-weight="bold" fill="#1e40af">OPEN / LICENSED DATA</text>
+
+  <line x1="450" y1="80" x2="450" y2="100" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="340" y="100" width="220" height="35" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="450" y="120" text-anchor="middle" font-weight="bold" fill="#1e40af">DATA COLLECTION & FILTERING</text>
+
+  <line x1="450" y1="135" x2="450" y2="155" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="340" y="155" width="220" height="35" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="450" y="175" text-anchor="middle" font-weight="bold" fill="#1e40af">TOKENIZATION (BPE)</text>
+
+  <line x1="450" y1="190" x2="450" y2="210" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="340" y="210" width="220" height="40" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="450" y="230" text-anchor="middle" font-weight="bold" fill="#92400e">FOUNDATION TRAINING</text>
+  <text x="450" y="245" text-anchor="middle" fill="#92400e" font-size="10">Mamba · Encoder-Decoder</text>
+
+  <line x1="450" y1="250" x2="450" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="340" y="270" width="220" height="40" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="450" y="290" text-anchor="middle" font-weight="bold" fill="#92400e">SPECIALIST TRAINING</text>
+  <text x="450" y="305" text-anchor="middle" fill="#92400e" font-size="10">Domain-specific fine-tuning</text>
+
+  <line x1="450" y1="310" x2="450" y2="330" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="340" y="330" width="220" height="40" rx="6" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+  <text x="450" y="350" text-anchor="middle" font-weight="bold" fill="#9d174d">DISTILLATION</text>
+  <text x="450" y="365" text-anchor="middle" fill="#9d174d" font-size="10">Teacher → Student · Verified data</text>
+
+  <line x1="450" y1="370" x2="450" y2="390" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="340" y="390" width="220" height="35" rx="6" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="450" y="410" text-anchor="middle" font-weight="bold" fill="#3730a3">ROUTER / VERIFIER / JUDGE</text>
+
+  <line x1="450" y1="425" x2="450" y2="445" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="340" y="445" width="220" height="35" rx="6" fill="#d1fae5" stroke="#10b981" stroke-width="2"/>
+  <text x="450" y="465" text-anchor="middle" font-weight="bold" fill="#065f46">END-TO-END EVALUATION</text>
+
+  <text x="450" y="505" text-anchor="middle" font-size="10" fill="#666">Distributed training: torchrun · Accelerate · DDP · FSDP · DeepSpeed</text>
+  <text x="450" y="520" text-anchor="middle" font-size="10" fill="#666">Mixed precision · gradient accumulation · checkpointing · resume</text>
+</svg>
