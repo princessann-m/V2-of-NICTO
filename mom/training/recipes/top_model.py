@@ -1,0 +1,54 @@
+"""Encoder-decoder top model recipe configuration."""
+
+from __future__ import annotations
+
+from mom.training.recipes import Recipe
+
+
+class TopModelRecipe(Recipe):
+    def __init__(self) -> None:
+        super().__init__(
+            name="top_model",
+            config={
+                "model_type": "encoder_decoder",
+                "encoder": {
+                    "model_type": "transformer",
+                    "hidden_size": 768,
+                    "num_layers": 6,
+                    "num_heads": 12,
+                    "ff_size": 3072,
+                    "max_seq_len": 512,
+                },
+                "decoder": {
+                    "model_type": "transformer",
+                    "hidden_size": 768,
+                    "num_layers": 6,
+                    "num_heads": 12,
+                    "ff_size": 3072,
+                    "max_seq_len": 512,
+                },
+                "training": {
+                    "epochs": 5,
+                    "batch_size": 8,
+                    "learning_rate": 1e-4,
+                    "weight_decay": 0.01,
+                    "warmup_steps": 200,
+                    "gradient_accumulation_steps": 2,
+                    "max_grad_norm": 1.0,
+                    "mixed_precision": True,
+                    "distributed": False,
+                    "checkpoint_dir": "checkpoints/top_model",
+                    "log_interval": 10,
+                    "save_interval": 1000,
+                    "val_interval": 1000,
+                },
+                "optimization": {
+                    "optimizer": "adamw",
+                    "scheduler": "linear",
+                },
+                "data": {
+                    "dataset": "dummy",
+                    "num_workers": 0,
+                },
+            },
+        )

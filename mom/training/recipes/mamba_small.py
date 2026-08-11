@@ -1,0 +1,46 @@
+"""Small Mamba recipe configuration."""
+
+from __future__ import annotations
+
+from mom.training.recipes import Recipe
+
+
+class MambaSmallRecipe(Recipe):
+    def __init__(self) -> None:
+        super().__init__(
+            name="mamba_small",
+            config={
+                "model_type": "mamba",
+                "d_model": 768,
+                "n_layers": 24,
+                "d_state": 16,
+                "d_conv": 4,
+                "expand": 2,
+                "vocab_size": 32000,
+                "max_seq_len": 2048,
+                "training": {
+                    "epochs": 3,
+                    "batch_size": 4,
+                    "learning_rate": 1e-4,
+                    "weight_decay": 0.01,
+                    "warmup_steps": 100,
+                    "gradient_accumulation_steps": 2,
+                    "max_grad_norm": 1.0,
+                    "mixed_precision": True,
+                    "distributed": False,
+                    "checkpoint_dir": "checkpoints/mamba_small",
+                    "log_interval": 10,
+                    "save_interval": 500,
+                    "val_interval": 500,
+                },
+                "optimization": {
+                    "optimizer": "adamw",
+                    "scheduler": "cosine",
+                    "min_lr_ratio": 0.1,
+                },
+                "data": {
+                    "dataset": "dummy",
+                    "num_workers": 0,
+                },
+            },
+        )
