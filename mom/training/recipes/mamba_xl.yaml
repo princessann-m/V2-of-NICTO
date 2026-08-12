@@ -1,20 +1,20 @@
 model:
   type: mamba2
-  d_model: 384
-  n_layers: 24
+  d_model: 1024
+  n_layers: 64
   vocab_size: 50257
   expansion_factor: 2
-  dt_rank: 96
+  dt_rank: 256
   d_state: 16
   conv_kernel: 4
 
 training:
-  epochs: 3
-  batch_size: 4
-  gradient_accumulation_steps: 8
-  learning_rate: 1.2e-4
+  epochs: 2
+  batch_size: 2
+  gradient_accumulation_steps: 64
+  learning_rate: 6e-5
   weight_decay: 0.1
-  warmup_steps: 2000
+  warmup_steps: 10000
   scheduler: cosine
   mixed_precision: bf16
   gradient_checkpointing: true
@@ -29,21 +29,22 @@ data:
   train_path: data/processed/splits/train.jsonl
   val_path: data/processed/splits/val.jsonl
   max_length: 2048
-  num_workers: 4
-  prefetch_factor: 2
+  num_workers: 16
+  prefetch_factor: 8
 
 hardware:
   devices: auto
-  strategy: ddp
+  strategy: fsdp
+  cpu_offload: true
 
 logging:
   log_interval: 10
   eval_interval: 500
   save_interval: 1000
   project: nicto-experts
-  experiment: mamba_small
+  experiment: mamba_xl
 
 checkpoint:
-  dir: checkpoints/experts/mamba_small
+  dir: checkpoints/experts/mamba_xl
   resume: null
   save_top_k: 2

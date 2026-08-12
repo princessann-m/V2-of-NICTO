@@ -1,18 +1,18 @@
 model:
   type: mamba2
-  d_model: 384
-  n_layers: 24
+  d_model: 256
+  n_layers: 16
   vocab_size: 50257
   expansion_factor: 2
-  dt_rank: 96
+  dt_rank: 64
   d_state: 16
   conv_kernel: 4
 
 training:
   epochs: 3
-  batch_size: 4
+  batch_size: 2
   gradient_accumulation_steps: 8
-  learning_rate: 1.2e-4
+  learning_rate: 1.5e-4
   weight_decay: 0.1
   warmup_steps: 2000
   scheduler: cosine
@@ -41,9 +41,9 @@ logging:
   eval_interval: 500
   save_interval: 1000
   project: nicto-experts
-  experiment: mamba_small
+  experiment: mamba_xsmall
 
 checkpoint:
-  dir: checkpoints/experts/mamba_small
+  dir: checkpoints/experts/mamba_xsmall
   resume: null
   save_top_k: 2

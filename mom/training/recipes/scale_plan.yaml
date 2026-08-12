@@ -1,0 +1,69 @@
+plan:
+  name: NICTO-1T
+  total_parameters: 1000000000000
+  target_date: "2027-01-01"
+  phases:
+    - name: foundation
+      parameters: 7000000000
+      tokens: 1000000000000
+      compute_pflops_days: 1000
+      config: mom/training/recipes/mamba_xxl.yaml
+      experts:
+        - mamba_xsmall
+        - mamba_small
+        - mamba_medium
+        - mamba_large
+        - mamba_xl
+    - name: expert_scale
+      parameters: 70000000000
+      tokens: 5000000000000
+      compute_pflops_days: 5000
+      configs:
+        - mom/training/recipes/mamba_xxl.yaml
+        - mom/training/recipes/mamba_xxxl.yaml
+    - name: top_model
+      parameters: 10000000000
+      tokens: 10000000000000
+      compute_pflops_days: 10000
+      config: mom/training/recipes/top_model.yaml
+    - name: full_scale
+      parameters: 1000000000000
+      tokens: 10000000000000
+      compute_pflops_days: 50000
+      config: mom/training/recipes/top_model.yaml
+
+distillation:
+  enabled: true
+  teacher_models:
+    - checkpoints/experts/mamba_xxl/final_model.pt
+    - checkpoints/experts/mamba_xxxl/final_model.pt
+  student_models:
+    - checkpoints/experts/mamba_xl/final_model.pt
+    - checkpoints/experts/mamba_large/final_model.pt
+    - checkpoints/experts/mamba_medium/final_model.pt
+    - checkpoints/experts/mamba_small/final_model.pt
+    - checkpoints/experts/mamba_xsmall/final_model.pt
+
+evaluation:
+  benchmarks:
+    -mmlu
+    -humaneval
+    -gsm8k
+    -hellaswag
+    -arc_challenge
+    -truthfulqa
+  evaluation_interval: 5000
+  best_model_metric: mmlu
+
+data:
+  train_splits:
+    - data/processed/splits/train.jsonl
+  val_splits:
+    - data/processed/splits/val.jsonl
+  test_splits:
+    - data/processed/splits/test.jsonl
+  token_budget: 10000000000000
+  quality_filters:
+    min_quality_score: 0.6
+    deduplicate: true
+    remove_toxic: true

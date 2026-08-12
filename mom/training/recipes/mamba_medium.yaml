@@ -1,30 +1,49 @@
-name: mamba_medium
-model_type: mamba
-d_model: 1024
-n_layers: 36
-d_state: 16
-d_conv: 4
-expand: 2
-vocab_size: 32000
-max_seq_len: 2048
+model:
+  type: mamba2
+  d_model: 512
+  n_layers: 32
+  vocab_size: 50257
+  expansion_factor: 2
+  dt_rank: 128
+  d_state: 16
+  conv_kernel: 4
+
 training:
-  epochs: 5
-  batch_size: 8
-  learning_rate: 8e-5
-  weight_decay: 0.01
-  warmup_steps: 200
-  gradient_accumulation_steps: 4
-  max_grad_norm: 1.0
-  mixed_precision: true
-  distributed: true
-  checkpoint_dir: checkpoints/mamba_medium
-  log_interval: 10
-  save_interval: 1000
-  val_interval: 1000
-optimization:
-  optimizer: adamw
+  epochs: 3
+  batch_size: 4
+  gradient_accumulation_steps: 16
+  learning_rate: 1e-4
+  weight_decay: 0.1
+  warmup_steps: 3000
   scheduler: cosine
-  min_lr_ratio: 0.1
+  mixed_precision: bf16
+  gradient_checkpointing: true
+  max_grad_norm: 1.0
+
+optimizer:
+  name: adamw
+  betas: [0.9, 0.95]
+  eps: 1e-8
+
 data:
-  dataset: dummy
-  num_workers: 2
+  train_path: data/processed/splits/train.jsonl
+  val_path: data/processed/splits/val.jsonl
+  max_length: 2048
+  num_workers: 8
+  prefetch_factor: 4
+
+hardware:
+  devices: auto
+  strategy: ddp
+
+logging:
+  log_interval: 10
+  eval_interval: 500
+  save_interval: 1000
+  project: nicto-experts
+  experiment: mamba_medium
+
+checkpoint:
+  dir: checkpoints/experts/mamba_medium
+  resume: null
+  save_top_k: 2

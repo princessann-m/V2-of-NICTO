@@ -1,36 +1,60 @@
-name: top_model
-model_type: encoder_decoder
-encoder:
-  model_type: transformer
-  hidden_size: 768
-  num_layers: 6
-  num_heads: 12
-  ff_size: 3072
-  max_seq_len: 512
-decoder:
-  model_type: transformer
-  hidden_size: 768
-  num_layers: 6
-  num_heads: 12
-  ff_size: 3072
-  max_seq_len: 512
+model:
+  type: transformer_top
+  d_model: 2048
+  n_layers: 24
+  vocab_size: 50257
+  n_heads: 32
+  d_ff: 8192
+  dropout: 0.1
+  attention_type: flash
+
 training:
   epochs: 5
-  batch_size: 8
-  learning_rate: 1e-4
-  weight_decay: 0.01
-  warmup_steps: 200
-  gradient_accumulation_steps: 2
+  batch_size: 4
+  gradient_accumulation_steps: 32
+  learning_rate: 3e-5
+  weight_decay: 0.1
+  warmup_steps: 5000
+  scheduler: cosine
+  mixed_precision: bf16
+  gradient_checkpointing: true
   max_grad_norm: 1.0
-  mixed_precision: true
-  distributed: false
-  checkpoint_dir: checkpoints/top_model
-  log_interval: 10
-  save_interval: 1000
-  val_interval: 1000
-optimization:
-  optimizer: adamw
-  scheduler: linear
+
+optimizer:
+  name: adamw
+  betas: [0.9, 0.95]
+  eps: 1e-8
+
 data:
-  dataset: dummy
-  num_workers: 0
+  train_path: data/processed/splits/train.jsonl
+  val_path: data/processed/splits/val.jsonl
+  max_length: 2048
+  num_workers: 16
+  prefetch_factor: 8
+
+hardware:
+  devices: auto
+  strategy: fsdp
+  cpu_offload: true
+
+logging:
+  log_interval: 10
+  eval_interval: 500
+  save_interval: 1000
+  project: nicto-top-model
+  experiment: top_model
+
+checkpoint:
+  dir: checkpoints/top_model
+  resume: null
+  save_top_k: 3
+
+experts:
+  enabled: true
+  top_k: 4
+  expert_paths:
+    - checkpoints/experts/mamba_xsmall/final_model.pt
+    - checkpoints/experts/mamba_small/final_model.pt
+    - checkpoints/experts/mamba_medium/final_model.pt
+    - checkpoints/experts/mamba_large/final_model.pt
+    - checkpoints/experts/mamba_xl/final_model.pt
