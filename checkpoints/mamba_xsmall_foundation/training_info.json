@@ -1,0 +1,43 @@
+{
+  "final_train_loss": 4.3442554424073965,
+  "final_val_loss": 3.5399725790023804,
+  "best_val_loss": 3.5399725790023804,
+  "total_time_seconds": 229.65851998329163,
+  "parameters": 48480,
+  "config": {
+    "vocab_size": 1000,
+    "d_model": 32,
+    "n_layers": 2,
+    "d_state": 8,
+    "d_conv": 2,
+    "expand": 2,
+    "dt_rank": 2,
+    "conv_bias": false,
+    "bias": false,
+    "use_fast_path": true,
+    "pad_vocab_size_multiple": 8,
+    "max_seq_len": 2048,
+    "d_inner": 64,
+    "pad_vocab_size_multiple_": 1000
+  },
+  "training_config": {
+    "model_name": "nicto",
+    "epochs": 1,
+    "batch_size": 2,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.01,
+    "warmup_steps": 100,
+    "gradient_accumulation_steps": 1,
+    "max_grad_norm": 1.0,
+    "mixed_precision": false,
+    "distributed": false,
+    "checkpoint_dir": "checkpoints",
+    "resume_from": null,
+    "log_interval": 10,
+    "save_interval": 500,
+    "val_interval": 500,
+    "device": "cpu",
+    "seed": 42,
+    "extra": {}
+  }
+}
