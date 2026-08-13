@@ -1,0 +1,14 @@
+{
+  "param_count": 10753280,
+  "param_count_millions": 10.75,
+  "config": {
+    "vocab_size": 1000,
+    "d_model": 256,
+    "n_layers": 12,
+    "d_state": 16,
+    "d_conv": 4,
+    "expand": 4
+  },
+  "best_val_loss": 1.7015,
+  "note": "10M model checkpoint not included in repo due to GitHub 100MB limit"
+}
